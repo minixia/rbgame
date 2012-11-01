@@ -11,8 +11,10 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.round %></td>
+    <%if(game.votes.length < 20)%>
     <td><a href="/votes/new?team=A组&game_id=<%=game.id%>">A组开始<a/></td>
     <td><a href="/votes/new?team=B组&game_id=<%=game.id%>">B组开始<a/></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

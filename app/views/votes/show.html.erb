@@ -6,7 +6,11 @@
     <%if(@vote.round == 4 || @vote.round == 8) %>
         <h1>谈判</h1>
     <%end%>
-    <button id="next_vote" class="vote">下一轮</button>
+    <%if(@vote.round != 10)%>
+        <button id="next_vote" class="vote">下一轮</button>
+    <%else%>
+        <h1>游戏结束，请报出本组和对方组总分</h1>
+    <%end%>
 <%else%>
     <div id="wait"><h1>请等待对方出牌</h1></div>
 <%end%>
