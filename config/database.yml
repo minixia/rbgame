@@ -35,6 +35,5 @@ production:
   reconnect: false
   database: rbgame_production
   pool: 5
-  username: root
+  username: zhidequ
   password: myapp
-  socket: /tmp/mysql.sock
