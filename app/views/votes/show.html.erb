@@ -1,0 +1,12 @@
+<div><h1>得分：</h1></div>
+<%if(@vote.score)%>
+    <div class="vote"><%=@vote.score%></div>
+    <input type="hidden" id="team" value="<%=@vote.team%>">
+    <input type="hidden" id="gid" value="<%=@vote.game_id%>">
+    <%if(@vote.round == 4 || @vote.round == 8) %>
+        <h1>谈判</h1>
+    <%end%>
+    <button id="next_vote" class="vote">下一轮</button>
+<%else%>
+    <div id="wait"><h1>请等待对方出牌</h1></div>
+<%end%>
