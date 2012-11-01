@@ -1,10 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Round:</b>
   <%= @game.round %>
 </p>
-
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<p>
+  <b>Time</b>
+  <%= @game.created_at %>
+</p>
+<p>
+  <b>Team A score</b>
+  <%= @ascore %>
+</p>
+<p>
+  <b>Team B score</b>
+  <%= @bscore %>
+</p> |
 <%= link_to 'Back', games_path %>

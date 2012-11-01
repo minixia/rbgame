@@ -8,8 +8,11 @@ jQuery ->
     $('#vote').attr('value', '黑')
   if($('#wait').length > 0)
     refresh = ()->
-      setTimeout ->
-        window.location.href = window.location.href
+      setInterval ->
+        local = window.location.href + ".json"
+        $.get local, {}, (data, status)->
+          if(data.score)
+            window.location.href = window.location.href
       , 1000
     refresh()
 

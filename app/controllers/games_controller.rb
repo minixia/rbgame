@@ -1,3 +1,4 @@
+#coding: utf-8
 class GamesController < ApplicationController
   # GET /games
   # GET /games.json
@@ -14,6 +15,17 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
+    avotes = Vote.where("game_id = #{@game.id} and team like 'A组'")
+    bvotes = Vote.where("game_id = #{@game.id} and team like 'B组'")
+
+    @ascore = 0
+    @bscore = 0
+    avotes.each {|v|
+      @ascore += v.score
+    }
+    bvotes.each {|v|
+      @bscore += v.score
+    }
 
     respond_to do |format|
       format.html # show.html.erb
